@@ -9,9 +9,10 @@ $(document).ready(function() {
 
     var text = $("#textRoman").val();
 
-    var input = JSON.stringify(text);
+    var input = JSON.stringify(text).slice(1,text.length+1);
     var answer = [];
 
+console.log(input.length)
     if (input.length === 4){
       var arrayPlacement = (input.charAt(0));
       var arrayPlacement1 = (input.charAt(1));
@@ -19,6 +20,7 @@ $(document).ready(function() {
       var arrayPlacement3 = (input.charAt(3));
       var romanSetThou = input.replace(arrayPlacement, (thou[arrayPlacement])).replace(arrayPlacement1, (hundreds[arrayPlacement1])) .replace(arrayPlacement2, (tens[arrayPlacement2])) .replace(arrayPlacement3, (ones[arrayPlacement3]));
       answer.push(romanSetThou);
+
 
     } else if (input.length === 3){
       var arrayPlacement = (input.charAt(0));
